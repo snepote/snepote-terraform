@@ -1,6 +1,6 @@
 variable "region" {
   type    = string
-  default = "eu-west-1"
+  default = "eu-west-1" # Europe (Ireland)
 }
 
 variable "profile" {

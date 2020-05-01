@@ -1,9 +1,8 @@
 provider "aws" {
-  region  = var.region
-  profile = var.profile
+  region = var.region
 }
 
-module "web_production" {
-  source        = "../../modules/aws/web"
-  tags          = merge({ environment = "production" }, var.tags)
+module "production_web" {
+  source = "../../modules/aws/web"
+  tags   = merge({ environment = var.environment }, var.tags)
 }
