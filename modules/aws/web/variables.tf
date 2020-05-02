@@ -19,8 +19,3 @@ variable "instance_type" {
   type        = string
   default     = "t3.micro"
 }
-
-variable "tags" {
-  description = "AWS instance tags"
-  type        = map
-}

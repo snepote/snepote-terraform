@@ -6,5 +6,5 @@ provider "aws" {
 resource "aws_instance" "web" {
   ami           = var.ami
   instance_type = var.instance_type
-  tags          = merge({ type = "web" }, var.tags)
+  tags = merge( { type = var.type }, var.tags )
 }
