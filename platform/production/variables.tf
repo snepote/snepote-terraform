@@ -1,15 +1,9 @@
 variable "region" {
-  type    = string
-  default = "eu-central-1" # Europe (Frankfurt)
+  description = "AWS region code. By default Europe (Ireland)"
+  type        = string
+  default     = "eu-west-1"
 }
 
-variable "tags" {
-  description = "AWS instance tags"
-  type        = map
-  default     = {}
-}
-
-variable "environment" {
-  type    = string
-  default = "production"
+variable "name" {
+  type = string
 }

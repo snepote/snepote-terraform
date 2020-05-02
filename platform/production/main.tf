@@ -1,8 +1,14 @@
-provider "aws" {
-  region = var.region
+locals {
+  environment = "production"
+  profile     = "snepote-terraform"
 }
 
-module "production_web" {
+module "web" {
   source = "../../modules/aws/web"
-  tags   = merge({ environment = var.environment }, var.tags)
+
+  region      = var.region
+  profile     = local.profile
+  name        = var.name
+  environment = local.environment
+  ami         = module.web.amis[var.region]
 }

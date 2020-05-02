@@ -1,4 +1,9 @@
-module "production_web_one" {
-  source = "../"
-  tags   = { name = "one" }
+locals {
+  name = "one"
+}
+
+module "production" {
+  source = "../."
+
+  name = local.name
 }
